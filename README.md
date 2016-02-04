@@ -1,5 +1,5 @@
 # registroElettronico
-Applicazione interattiva con Registro Elettronico.
+Applicazione interattiva con Registro Elettronico ClasseViva
 
 ## API
 
