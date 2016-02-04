@@ -113,6 +113,7 @@ app.get('/:sessionId/files', function (req, res) {
 	});
 });
 
+
 /* ####### TODO ####### */
 app.get('/:sessionId/oggi', function (req, res) {
 	var url = base_url + "regclasse.php";
@@ -177,6 +178,43 @@ app.get('/:sessionId/oggi', function (req, res) {
 	});
 });
 
+
+/* ####### TODO ####### */
+app.get('/:sessionId/assenze', function (req, res) {
+	var url = "https://web.spaggiari.eu/tic/app/default/consultasingolo.php";
+	request({url: url, /*jar: jar*/ headers: {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0',
+	            'Set-Cookie': "PHPSESSID=" + req.params.sessionId,
+	            'Cookie': "PHPSESSID=" + req.params.sessionId}
+	}, function(error, response, body) {
+		$ = cheerio.load(body);
+		result = new Object();		
+		
+		var sanitize = function(text, onlynumber) {
+			retval = text.replace("\n", "").trim();
+			
+			if(onlynumber == 1) {
+				retval = retval.replace(/[^0-9\.]/g, '');
+			} else {
+				/*gg_effettivi_io = retval.indexOf("(") + 1;
+				gg_effettivi = retval.slice(gg_effettivi_io, -2);
+				retval = gg_effettivi.replace(/[^0-9\.]/g, '');*/
+				// retval = retval.replace(/[^0-9\.]/g, ''); 
+			}
+			
+			return retval;
+		}
+		
+		var ass_totali = {
+			assenze: sanitize( $("#skeda_eventi").find("tr").eq(2).find("td").eq(1).text(), 0 ),
+			ritardi: sanitize( $("#skeda_eventi").find("tr").eq(2).find("td").eq(3).text(), 1 ),
+			uscite: sanitize( $("#skeda_eventi").find("tr").eq(2).find("td").eq(5).text(), 1 )
+		}
+		result["totali"] = [];
+		result["totali"].push( ass_totali );
+		
+		res.send(result);
+	});
+});
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
