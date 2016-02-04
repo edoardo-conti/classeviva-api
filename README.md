@@ -22,4 +22,3 @@ Applicazione interattiva con Registro Elettronico.
 * *File*<br />
   Per visualizzare i file caricati dai professori per la classe:<br />
   `http://54.149.146.220:3000/<codice alfanumerico di 32 caratteri>/files`
-- 
