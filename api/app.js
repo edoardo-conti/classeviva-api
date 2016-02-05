@@ -7,7 +7,7 @@ var base_url = "https://web.spaggiari.eu/cvv/app/default/";
 
 
 app.get('/', function (req, res) {
-	res.send("No arguments provided")
+	res.send("<h1>It Works!</h1>")
 });
 
 
@@ -22,6 +22,23 @@ app.get('/:custcode/:usercode/:password', function (req, res) {
 		  	res.send('{"status":"error"}');
 		  }
 	});
+});
+
+
+/* TODO: esempio accesso semplice */
+app.get('/edoardo', function(req, res) {
+
+	var url = global_base_url + "login.php?custcode=PSIT0008&login=G799661H&password=Compleanno2&mode=custcode";
+	var jar = request.jar();
+	request({url: url, jar: jar}, function(error, response, body) {
+		  $ = cheerio.load(body);
+		  if ($('.name').length) {
+		  	res.send('{"status":"OK", "sessionId":"' + jar.getCookies(url)[0].value + '"}');
+		  } else {
+		  	res.send('{"status":"error"}');
+		  }
+	});
+
 });
 
 
