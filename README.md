@@ -22,3 +22,7 @@ Applicazione interattiva con Registro Elettronico ClasseViva
 * *File*<br />
   Per visualizzare i file caricati dai professori per la classe:<br />
   `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/files`
+* *Assenze*<br />
+  Per controllare le assenze:
+  `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/files`
+
