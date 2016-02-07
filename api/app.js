@@ -62,7 +62,7 @@ app.get('/:sessionId/', function (req, res) {
 });
 
 
-app.get('/:sessionId/votes', function (req, res) {
+app.get('/:sessionId/voti', function (req, res) {
 	var url = base_url + "genitori_note.php";
 	request({url: url, /*jar: jar*/ headers: {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0',
 	            'Set-Cookie': "PHPSESSID=" + req.params.sessionId,
@@ -101,7 +101,7 @@ app.get('/:sessionId/agenda', function (req, res) {
 });
 
 
-app.get('/:sessionId/files', function (req, res) {
+app.get('/:sessionId/didattica', function (req, res) {
 	var url = base_url + "didattica_genitori.php";
 	request({url: url, /*jar: jar*/ headers: {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0',
 		'Set-Cookie': "PHPSESSID=" + req.params.sessionId,

@@ -12,7 +12,7 @@ Applicazione interattiva con Registro Elettronico ClasseViva
     A questo punto si è stabilita una connessione e la pagina sopra citata restituirà il nome dell'alunno e la scuola frequentante
 * *Voti*<br />
   Per visualizzare i voti dello studente accedere alla pagina:<br />
-  `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/votes`
+  `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/voti`
 * *Attività giornaliera*<br />
 	Per visualizzare gli argomenti affrontati nella giornata odierna:<br />
   `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/oggi`
@@ -21,7 +21,7 @@ Applicazione interattiva con Registro Elettronico ClasseViva
   `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/agenda`
 * *File*<br />
   Per visualizzare i file caricati dai professori per la classe:<br />
-  `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/files`
+  `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/didattica`
 * *Assenze*<br />
   Per controllare le assenze:
   `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/assenze`
