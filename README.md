@@ -24,5 +24,5 @@ Applicazione interattiva con Registro Elettronico ClasseViva
   `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/files`
 * *Assenze*<br />
   Per controllare le assenze:
-  `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/files`
+  `http://registroell.ddns.net:3000/<codice alfanumerico di 32 caratteri>/assenze`
 
