@@ -1,5 +1,7 @@
 # registroElettronico
 Applicazione interattiva con Registro Elettronico ClasseViva
+Sviluppata da Lorenze, Edoardo, Luca.
+
 
 ## API
 
