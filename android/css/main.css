@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/**
+ * MAIN
+ * 11/02/2016
+ */
+
+.main-background {
+    background: red none repeat scroll 0 0;
+    border-bottom: 1px solid black;
+    height: 25vh;
+}
+
+.main-avatar {
+    background-image: url("http://i.imgur.com/RdgpIk0.png");
+	background-size: cover;
+    border-radius: 50%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 25vh;
+    position: relative;
+    top: 12.5vh;
+    width: 25vh;
+}
+
+.main-welcome {
+    position: relative;
+    text-align: center;
+    top: 15vh;
+}
+
+.main-welcome > span.welcome-name {
+    font-size: 1.8em;
+}
