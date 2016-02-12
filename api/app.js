@@ -6,6 +6,56 @@ var global_base_url = "https://web.spaggiari.eu/home/app/default/";
 var base_url = "https://web.spaggiari.eu/cvv/app/default/";
 
 
+/**
+ * Funzioni 
+ */
+app.get('/:sessionId/profile', function (req, res) {
+	var profile = new Object();
+	var check = true;
+	var url = null;
+	
+	// # nome alunno e nome scuola
+	url = global_base_url + "menu_webinfoschool_genitori.php";
+	request({url: url, /*jar: jar*/ headers: {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0',
+	            'Set-Cookie': "PHPSESSID=" + req.params.sessionId,
+	            'Cookie': "PHPSESSID=" + req.params.sessionId}
+	}, function(error, response, body) {
+		$ = cheerio.load(body);
+		if ($('.name').length) {
+			// profile['status'] = "OK";
+			profile['name'] = $('.name').text();
+			profile['school'] = $('.scuola').text();
+			// res.send(JSON.stringify(result));
+		} else {
+			check = false;
+			// res.send('{"status":"error"}');
+		}
+	});
+	
+	// # nome classe
+	url = base_url + "regclasse.php";
+	request({url: url, /*jar: jar*/ headers: {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0',
+	            'Set-Cookie': "PHPSESSID=" + req.params.sessionId,
+	            'Cookie': "PHPSESSID=" + req.params.sessionId}
+	}, function(error, response, body) {
+		$ = cheerio.load(body);
+		
+		if ($('.page_title_variable').length) {
+			profile['class'] = $('.page_title_variable').eq(0).text();
+		} else check = false;	
+		
+	});
+	
+	// # Check finale e spedizione 
+	if(!check) {
+		res.send('{"status":"error"}');
+	} else {
+		res.send(JSON.stringify(profile));
+	}
+	
+});
+
+
 app.get('/', function (req, res) {
 	res.send("<h1>It Works!</h1>")
 });
