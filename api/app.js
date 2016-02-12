@@ -10,9 +10,9 @@ var base_url = "https://web.spaggiari.eu/cvv/app/default/";
  * Funzioni 
  */
 app.get('/:sessionId/profile', function (req, res) {
-	var profile = new Object();
-	var check = true;
-	var url = null;
+	profile = new Object();
+	check = true;
+	url = null;
 	
 	// # nome alunno e nome scuola
 	url = global_base_url + "menu_webinfoschool_genitori.php";
