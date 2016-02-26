@@ -1,9 +1,13 @@
 var express = require('express');
+var cors = require('cors');
 var request = require('request');
 var cheerio = require('cheerio');
-var app = express();
 var global_base_url = "https://web.spaggiari.eu/home/app/default/";
 var base_url = "https://web.spaggiari.eu/cvv/app/default/";
+
+var app = express();
+// abilita richieste multi-origine
+app.use(cors());
 
 
 /**
