@@ -14,7 +14,7 @@ Sviluppata da Lorenzo, Edoardo, Luca.
     A questo punto si è stabilita una connessione e la pagina sopra citata restituirà il nome dell'alunno e la scuola frequentante
 * *Voti*<br />
   Per visualizzare i voti dello studente accedere alla pagina:<br />
-  `address:3000/<codice alfanumerico di 32 caratteri>/voti`
+  `<address>:3000/<codice alfanumerico di 32 caratteri>/voti`
 * *Attività giornaliera*<br />
 	Per visualizzare gli argomenti affrontati nella giornata odierna:<br />
   `<address>:3000/<codice alfanumerico di 32 caratteri>/oggi`
