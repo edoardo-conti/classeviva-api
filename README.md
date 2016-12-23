@@ -1,7 +1,5 @@
-# registroElettronico
-Applicazione interattiva con Registro Elettronico ClasseViva
-Sviluppata da Lorenzo, Edoardo, Luca.
-
+# classeViva-api
+Web-service per l'erogazione di informazioni in formato JSON tramite API esterne del portale classeViva.
 
 ## API
 
