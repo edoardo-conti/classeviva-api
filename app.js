@@ -265,7 +265,8 @@ app.get('/:sessionId/assenze', function (req, res) {
 			
 			if(onlynumber == 1) {
 				retval = retval.replace(/[^0-9\.]/g, '');
-			
+			}
+
 			return retval;
 		}
 		
