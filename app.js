@@ -265,12 +265,6 @@ app.get('/:sessionId/assenze', function (req, res) {
 			
 			if(onlynumber == 1) {
 				retval = retval.replace(/[^0-9\.]/g, '');
-			} else {
-				/*gg_effettivi_io = retval.indexOf("(") + 1;
-				gg_effettivi = retval.slice(gg_effettivi_io, -2);
-				retval = gg_effettivi.replace(/[^0-9\.]/g, '');*/
-				// retval = retval.replace(/[^0-9\.]/g, ''); 
-			}
 			
 			return retval;
 		}
