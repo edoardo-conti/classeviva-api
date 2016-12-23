@@ -1,5 +1,6 @@
 # classeViva-api
-Web-service per l'erogazione di informazioni in formato JSON tramite API esterne del portale classeViva.
+Web-service per l'erogazione di informazioni in formato JSON tramite API esterne del portale classeViva. 
+Software dipendente da Node.js e moduli npm.
 
 ## API
 
