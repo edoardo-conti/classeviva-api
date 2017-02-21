@@ -5,7 +5,7 @@ Software dipendente da Node.js e moduli npm.
 ## API
 
 * *Connessione*
-  * Raggiungere `<address>:3000/PSIT0008/usercode/password`
+  * Raggiungere `<address>:3000/<school_code>/<usercode>/<password>`
   * Di seguito verrà restituito un JSON simile strutturalmente al seguente:<br />
     ` {"status":"OK", "sessionId":"<codice alfanumerico di 32 caratteri>"}` <br />
     Ora occorre passare all'indirizzo sopra citato il codice precendemente ottenuto<br />
