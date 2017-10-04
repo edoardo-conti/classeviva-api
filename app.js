@@ -79,23 +79,6 @@ app.get('/:custcode/:usercode/:password', function (req, res) {
 });
 
 
-/* TODO: esempio accesso semplice */
-app.get('/edoardo', function(req, res) {
-
-	var url = global_base_url + "login.php?custcode=PSIT0008&login=G799661H&password=Compleanno2&mode=custcode";
-	var jar = request.jar();
-	request({url: url, jar: jar}, function(error, response, body) {
-		  $ = cheerio.load(body);
-		  if ($('.name').length) {
-		  	res.send('{"status":"OK", "sessionId":"' + jar.getCookies(url)[0].value + '"}');
-		  } else {
-		  	res.send('{"status":"error"}');
-		  }
-	});
-
-});
-
-
 app.get('/:sessionId/', function (req, res) {
 	var url = global_base_url + "menu_webinfoschool_genitori.php";
 	request({url: url, /*jar: jar*/ headers: {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:37.0) Gecko/20100101 Firefox/37.0',
